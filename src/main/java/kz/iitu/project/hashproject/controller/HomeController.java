@@ -3,7 +3,12 @@ package kz.iitu.project.hashproject.controller;
 import kz.iitu.project.hashproject.entities.Users;
 import kz.iitu.project.hashproject.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,8 +19,20 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
+
+    private Users getUserData() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)){
+            User secUser = (User)authentication.getPrincipal();
+            Users myUser = userService.getUserByEmail(secUser.getUsername());
+            return myUser;
+        }
+        return null;
+    }
+
     @GetMapping(value = "/index")
-    public String index(){
+    public String index(Model model){
+        model.addAttribute("currentUser", getUserData());
         return "index";
     }
 
