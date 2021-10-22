@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>HASH PROJECT</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}" type="text/css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="logo">
+                <a href="#">
+                    Hash Project
+                </a>
+            </div>
+            <div class="links">
+                <div class="links_box">
+                    <a class="link" href="#">HOME</a>
+                    <div sec:authorize="isAuthenticated()">
+                        <a class="link" href="#">Hi, Bitch!!!</a>
+                        <a class="link" th:href="@{/logout}">LOG OUT</a>
+                    </div>
+                    <div sec:authorize="isAnonymous()">
+                        <a th:href="@{/signup}">
+                            <button class="button_register">SIGN UP</button>
+                        </a>
+                        <a th:href="@{/login}">
+                            <button class="button">LOG IN</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+</body>
+</html>

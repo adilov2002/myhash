@@ -1,0 +1,309 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.main {
+    width: 100%;
+}
+
+
+.header {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.logo {
+    width: 30%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.logo span {
+    color: black;
+    padding-left: 10px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.links {
+    width: 70%;
+}
+
+.links_box {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.back_box {
+    width: 89%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    padding: 10px 30px;
+    font-weight: 600;
+}
+
+.link:hover {
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+}
+
+.button {
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.button_register {
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    outline: 1px black solid;
+}
+
+.button_register:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    outline: 1px black solid;
+}
+
+.button i {
+    padding-left: 10px;
+}
+
+.button_outline {
+    font-weight: 600;
+    padding: 17px 34px;
+    border-radius: 20px;
+    border: 3px black solid;
+    background-color: white;
+    font-size: 30px;
+}
+
+.button_outline:hover {
+    background-color: black;
+    color: white;
+}
+
+.button_outline i {
+    padding-left: 10px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+}
+
+.content_contact {
+    width: 100%;
+    display: flex;
+    background-image: url('https://image.freepik.com/free-vector/email-marketing-internet-chatting-24-hours-support_335657-3009.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content_about {   
+    width: 100%;
+    display: flex;
+    height: 600px;
+    background-image: url('https://image.freepik.com/free-vector/multicultural-people-standing-together_74855-6583.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content_login {
+    width: 70%;
+    margin: auto;
+    height: 550px;
+    box-shadow: 0px 0px 10px -3px;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-image: url('https://image.freepik.com/free-vector/access-control-system-abstract-concept-illustration-security-system-authorize-entry-login-credentials-electronic-access-password-pass-phrase-pin-verification_335657-3373.jpg');
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.login {
+    width: 40%;
+    height: 400px;
+    padding: 10px;
+}
+
+.login_buttons {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c_left {
+    width: 50%;
+}
+
+.c_right {
+    width: 50%;
+}
+
+.c_center {
+    width: 50%;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+.block {
+    width: 70%;
+    margin: auto;
+    padding-top: 100px;
+    font-size: 30px;
+}
+
+.block_v1 {
+    width: 70%;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.map {
+    width: 100%;
+    height: 400px;
+    border: 1px black solid;
+    border-radius: 10px;
+
+}
+
+.contact_block {
+    width: 70%;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.input {
+    width: 80%;
+    height: 40px;
+    border: 1px black solid;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.textarea {
+    width: 77.27%;
+    border: 1px black solid;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.cursor {
+    cursor: pointer;
+}
+
+.cursor:hover {
+    text-decoration: underline;
+}
+
+.gray {
+    color: gray;
+}
+
+
+@media (max-width: 800px) {
+    .links_box {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .login {
+        width: 80%;
+        height: 400px;
+        padding: 10px;
+    }
+
+    .content_contact {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-position: center;
+        background-image: url('https://image.freepik.com/free-vector/email-marketing-internet-chatting-24-hours-support_335657-3009.jpg');
+        background-repeat: no-repeat;
+    }
+
+    .c_left {
+        width: 80%;
+    }
+
+    .c_right {
+        width: 80%;
+    }
+
+    .c_right button {
+        margin-top: 10px;
+    }
+
+    .contact_block {
+        width: 70%;
+        margin: auto;
+        padding-top: 20px;
+        font-size: 30px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

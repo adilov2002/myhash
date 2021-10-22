@@ -1,0 +1,55 @@
+package kz.iitu.project.hashproject.controller;
+
+import kz.iitu.project.hashproject.entities.Users;
+import kz.iitu.project.hashproject.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class HomeController {
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping(value = "/index")
+    public String index(){
+        return "index";
+    }
+
+    @GetMapping(value = "/signup")
+    public String signUp(){
+        return "signup";
+    }
+
+    @PostMapping(value = "/register")
+    public String register(@RequestParam(name = "name") String name,
+                           @RequestParam(name = "surname") String surname,
+                           @RequestParam(name = "email") String email,
+                           @RequestParam(name = "password") String password,
+                           @RequestParam(name = "re-password") String rePassword) {
+
+        if (password.equals(rePassword)) {
+
+            Users user = new Users();
+            user.setName(name);
+            user.setSurname(surname);
+            user.setPassword(password);
+            user.setEmail(email);
+
+            if (userService.createUser(user) != null){
+                return "redirect:/signup?success";
+            }
+        }
+        return "redirect:/signup?error";
+    }
+
+    @GetMapping(value = "/login")
+    public String login(){
+        return "login";
+    }
+
+
+}
