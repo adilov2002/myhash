@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -18,7 +19,6 @@ public class HomeController {
 
     @Autowired
     private UserService userService;
-
 
     private Users getUserData() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -30,9 +30,17 @@ public class HomeController {
         return null;
     }
 
+    @RequestMapping(value = "/")
+    public String index(){
+        return "forward:/index";
+    }
+
     @GetMapping(value = "/index")
     public String index(Model model){
-        model.addAttribute("currentUser", getUserData());
+        Users user = getUserData();
+        if (user != null){
+            model.addAttribute("currentUser", getUserData());
+        }
         return "index";
     }
 
@@ -64,9 +72,30 @@ public class HomeController {
     }
 
     @GetMapping(value = "/login")
-    public String login(){
+    public String login(Model model){
+        Users user = getUserData();
+        if (user != null){
+            model.addAttribute("currentUser", getUserData());
+        }
         return "login";
     }
 
+    @GetMapping(value = "/about")
+    public String about(Model model){
+        Users user = getUserData();
+        if (user != null){
+            model.addAttribute("currentUser", getUserData());
+        }
+        return "about";
+    }
+
+    @GetMapping(value = "/contact")
+    public String contact(Model model){
+        Users user = getUserData();
+        if (user != null){
+            model.addAttribute("currentUser", getUserData());
+        }
+        return "contact";
+    }
 
 }

@@ -29,14 +29,14 @@
                 <div class="login">
                     <h1>Welcome!</h1>
                     <form th:action="@{'/auth'}" method="post">
-                        <input type="email" class="input" placeholder="e-mail" name="user_email" required>
+                        <input type="email" class="input" placeholder="e-mail" name="user_email" >
                         <br>
-                        <input type="password" class="input" placeholder="password" name="user_password" required>
+                        <input type="password" class="input" placeholder="password" name="user_password" >
                         <br>
                         <div class="login_buttons">
                             <button class="button" type="submit">LOG IN</button>
                             <a th:href="@{/signup}">
-                                <button class="button">CREATE ACCOUNT</button>
+                                <button class="button" type="button">CREATE ACCOUNT</button>
                             </a>
                         </div>
                     </form>

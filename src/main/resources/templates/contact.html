@@ -1,0 +1,27 @@
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    xmlns:layout="http://ultraq.net.nz/thymeleaf/layout" layout:decorator="main.html">
+    <div class="content_contact" layout:fragment="site_content">
+        <!--Content left part-->
+        <div class="c_left">
+            <div class="block_v1">
+                <h4>Our location</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d653.8454777806783!2d76.92922933844734!3d43.219123029295226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f307c71953f%3A0x3a7913cb3982fc67!2sThe%20Ritz-Carlton%2C%20Almaty!5e0!3m2!1sen!2skz!4v1633174633105!5m2!1sen!2skz" class="map" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <!--Content right part-->
+        <div class="c_right">
+            <div class="contact_block">
+                <h4>Contact us</h4>
+                <input type="text" class="input" placeholder="Name">
+                <input type="text" class="input" placeholder="Surname">
+                <input type="email" class="input" placeholder="E-mail">
+                <textarea class="textarea" rows="8" placeholder="Your message"></textarea>
+                <button class="button">
+                    SEND MESSAGE<i class="fab fa-telegram-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</html>

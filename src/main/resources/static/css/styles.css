@@ -44,6 +44,7 @@ body {
 
 .links {
     width: 70%;
+    display: flex;
 }
 
 .links_box {
@@ -140,6 +141,7 @@ body {
     background-image: url('https://image.freepik.com/free-vector/email-marketing-internet-chatting-24-hours-support_335657-3009.jpg');
     background-repeat: no-repeat;
     background-position: center;
+    min-height: 600px;
 }
 
 .content_about {   
@@ -153,7 +155,8 @@ body {
 
 .content_login {
     width: 70%;
-    margin: auto;
+    margin: auto auto 50px auto;
+    padding-right: 40px;
     height: 550px;
     box-shadow: 0px 0px 10px -3px;
     border-radius: 8px;
@@ -166,7 +169,7 @@ body {
 
 .login {
     width: 40%;
-    height: 400px;
+    min-height: 400px;
     padding: 10px;
 }
 
@@ -219,11 +222,17 @@ body {
     width: 70%;
     margin: auto;
     padding-top: 20px;
+    padding-right: 100px;
     font-size: 30px;
+    display: block;
+}
+
+.contact_block button {
+    margin-top: 20px;
 }
 
 .input {
-    width: 80%;
+    width: 100%;
     height: 40px;
     border: 1px black solid;
     border-radius: 10px;
@@ -235,7 +244,7 @@ body {
 }
 
 .textarea {
-    width: 77.27%;
+    width: 100%;
     border: 1px black solid;
     border-radius: 10px;
     outline: none;

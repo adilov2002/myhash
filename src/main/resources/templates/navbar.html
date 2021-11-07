@@ -1,0 +1,25 @@
+<div class="header">
+  <div class="logo">
+    <a th:href="@{/index}">
+      <img th:src="@{images/money.png}" alt=""/><span>Altyn</span>
+    </a>
+  </div>
+  <div class="links">
+    <div class="links_box">
+      <a class="link" th:href="@{/index}">HOME</a>
+      <a class="link" th:href="@{/about}">ABOUT US</a>
+      <a class="link" th:href="@{/contact}">CONTACT</a>
+      <a th:href="@{/signup}" style="text-decoration: none" sec:authorize="isAnonymous()">
+        <button class="button_register">SIGN UP</button>
+      </a>
+      <a th:href="@{/login}" sec:authorize="isAnonymous()">
+        <button class="button">LOG IN</button>
+      </a>
+      <a class="link" href="#" th:text="${currentUser.getName() + currentUser.getSurname()}" sec:authorize="isAuthenticated()"></a>
+      <a class="link" href="JavaScript:void(0)" onclick="document.getElementById('logoutID').submit()" sec:authorize="isAuthenticated()" >LOG OUT</a>
+    </div>
+    <form th:action="@{'/logout'}" method="post" id="logoutID" sec:authorize="isAuthenticated()">
+
+    </form>
+  </div>
+</div>
